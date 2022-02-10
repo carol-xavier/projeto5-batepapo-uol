@@ -72,32 +72,32 @@ function renderizarMensagem() {
     for (let i = 0; i < chat.length; i++){    
     if(chat[i].type == "message"){ 
       mensagem.innerHTML +=   `    
-            <div  class="notificationMensagem">
+            <div  class="notificationMensagem mensagem">
                 <div class="time">(${chat[i].time})</div>
                 <div class="msgContent"><strong>${chat[i].from}</strong> para <strong>${chat[i].to}</strong>: ${chat[i].text}</div>
             </div>
       `} else{
         mensagem.innerHTML += `
-              <div  class="notificationStatus">
+              <div  class="notificationStatus mensagem">
                   <div class="time">(${chat[i].time})</div>
                   <div class="msgContent"><strong>${chat[i].from}</strong> ${chat[i].text}</div>
               </div>`
       }                              
       if(chat[i].to == name){`  
-            <div  class="notificationMsgReservada">
+            <div  class="notificationMsgReservada mensagem">
                 <div class="time">(${chat[i].time})</div>
                 <div class="msgContent"><strong>${chat[i].from}</strong> para <strong>${chat[i].to}</strong>: ${chat[i].text}</div>
             </div>
             `} //perguntar se esse if de Reservada está correto
-      // scrollAutomatico();
+      scrollAutomatico();
       }
 }
 
-// function scrollAutomatico(){
-//       //rever isso aqui do scrollIntoView, achar o querySelector correto
-//       const elementoNovoBottom = document.querySelector(".novaMensagem");
-//       elementoNovoBottom.scrollIntoView()
-// }
+function scrollAutomatico(){
+      //rever isso aqui do scrollIntoView, achar o querySelector correto
+      const elementoNovoBottom = document.querySelector("body");
+      elementoNovoBottom.scrollIntoView(false);
+}
 
 
  function adicionarMensagem() {
