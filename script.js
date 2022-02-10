@@ -21,7 +21,6 @@ function fecharMenu(){
 
 /*--------------------Requisitos-------------------------*/
 let chat = [];
-buscarMensagens();
 
 function buscarMensagens() {
   const promise = axios.get("https://mock-api.driven.com.br/api/v4/uol/messages");
@@ -49,13 +48,13 @@ if(chat[i].type == "status"){
    mensagem.innerHTML +=   `    
          <div class="notificationMsgNormal">
             <div class="time">(${chat[i].time})</div>
-            <div class="msgContent">${chat[i].text}</div>
+            <div class="msgContent"><strong>${chat[i].from}</strong> para <strong>${chat[i].to}</strong>: ${chat[i].text}</div>
         </div>
    `}
   if(chat[i].to !== "todos"){`
         <div class="notificationMsgReservada">
              <div class="time">(${chat[i].time})</div>
-             <div class="msgContent">${chat[i].text}</div>
+             <div class="msgContent"><strong>${chat[i].from}</strong> para <strong>${chat[i].to}</strong>: ${chat[i].text}</div>
          </div>
         `}
    }
@@ -79,8 +78,10 @@ if(chat[i].type == "status"){
      chat.push(novaMensagem);
      }
     
-  const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages");
-  console.log(chat);             
-  promise.then(renderizarMensagem);   //Bad request error 400!!!!!!!!!!!!!!!!!
+  // const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages");
+  // console.log(chat);             
+  // promise.then(renderizarMensagem);   //Bad request error 400!!!!!!!!!!!!!!!!!
 }
 
+buscarMensagens();
+window.setInterval(buscarMensagens,3000);
