@@ -81,9 +81,10 @@ article {
     width:100%;
     margin-top: 106px;
     margin-bottom: 80px;
+    font-size: 14px;
 }
 
-.notificationMsg {
+article .notificationStatus {
     padding: 3%;
     background-color: #DCDCDC;
     border-radius: 2px;
@@ -92,7 +93,7 @@ article {
     align-items: center;
 }
 
-.notificationSignIn {
+article .notificationMsgReservada {
     margin: 4px 0;
     padding: 3%;
     background-color: #FFDEDE;
@@ -102,13 +103,21 @@ article {
     align-items: center;
 }
 
-.msgContent {
-    margin-left:3%;
+article .notificationMsgNormal {
+    margin: 4px 0;
+    padding: 3%;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+
+    display: flex;
+    align-items: center;
 }
-.msgContent b {
-    font-weight: 700;
+
+article .msgContent {
+    margin-left:5%;
 }
-.time {
+
+article .time {
     color: #AAAAAA;
 }
 
@@ -136,11 +145,14 @@ footer ion-icon {
     font-size: 30px;
 }
 
-footer input {
+footer input {  /*Placeholder não está centralizado dentro de footer, melhor usar input?*/
     margin-left: 5%;
-    border: none;
+    box-sizing: 80px;
+    border: #FFFFFF;
     font-style: italic;
     font-size: 18px;
+    display: flex;
+    align-items: center;
 }
 
 footer ::placeholder {
