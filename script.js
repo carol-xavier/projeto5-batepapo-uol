@@ -21,6 +21,7 @@ let name = "";
 cadastrarUsuario();
 buscarMensagens();
 window.setInterval(buscarMensagens,3000);
+window.setInterval(manterConexao,5000);
 
 function cadastrarUsuario() {
   name = prompt("Como você gosta de ser chamado?");
@@ -50,6 +51,10 @@ function cadastrarSucesso() {
   alert("Cadastro realizado com sucesso!");
 }
 
+function manterConexao() {
+  let objeto = {name:name};
+  const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/status", objeto);
+}
 
 function buscarMensagens() {
   const promise = axios.get("https://mock-api.driven.com.br/api/v4/uol/messages");
@@ -100,7 +105,7 @@ function scrollAutomatico(){
 }
 
 
- function adicionarMensagem() {
+function adicionarMensagem() {
 
      const objeto = {
        text: document.querySelector(".msgChat").value,                  
@@ -112,5 +117,10 @@ function scrollAutomatico(){
 
   const promise = axios.post("https://mock-api.driven.com.br/api/v4/uol/messages", objeto);           
   promise.then(buscarMensagens);  
-  }
+  promise.catch(barrarUsuarioOff);
+}
+
+function barrarUsuarioOff(){ //testar se está certo
+  window.location.reload();
+}
     
