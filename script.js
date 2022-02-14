@@ -1,14 +1,14 @@
 function abrirMenu() {
-  const menubar = document.querySelectorAll('.escondido');
+  const menubar = document.querySelectorAll('.escondido2');
   for (i = 0; i < menubar.length; i++) {
-    menubar[i].classList.remove('escondido');
+    menubar[i].classList.remove('escondido2');
   }
 }
 
 function fecharMenu() {
   const menubar = document.querySelectorAll('.desaparecerMenu');
   for (i = 0; i < menubar.length; i++) {
-    menubar[i].classList.add('escondido');
+    menubar[i].classList.add('escondido2');
   }
 }
 
