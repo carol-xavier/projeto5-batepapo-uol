@@ -18,11 +18,11 @@ body {
 .tela-inicial img {
     width: 130px;
     height: 92px;
-    margin-top: 30%;
+    margin-top: 10%;
 }
 
 .tela-inicial input{
-    margin-top: 20%;
+    margin-top: 10%;
     width: 261px;
     height: 54px;
     background-color: #FFFFFF;
@@ -42,6 +42,7 @@ body {
     width: 109px;
     height: 45px;
     margin-top: 15px;
+    
 
     font-family: Roboto;
     background-color: #E7E7E7;
