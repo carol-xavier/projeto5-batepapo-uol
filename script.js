@@ -16,7 +16,7 @@ function fecharMenu() {
 let input = document.querySelector(".msgChat");
 
 
-input.addEventListener("keyup", function(KeyboardEvent) {
+input.addEventListener("keyup", function (KeyboardEvent) {
   // Number 13 is the "Enter" key on the keyboard
   if (KeyboardEvent.keyCode === 13) {
     event.preventDefault();
@@ -72,8 +72,8 @@ function mostrarMensagem(resposta) {
 function scrollAutomatico() {
   const todasMensagens = document.querySelectorAll("article div")
   const ultimaMensagem = todasMensagens[todasMensagens.length - 1];
-  console.log("ultimaMensagem",ultimaMensagem);
-  
+  console.log("ultimaMensagem", ultimaMensagem);
+
   ultimaMensagem.scrollIntoView();
 }
 
@@ -90,15 +90,15 @@ function renderizarMensagem() {
             <div  class="notificationMensagem data-identifier="message"">
                 <div class="time">(${chat[i].time})</div>
                 <div class="msgContent"><strong>${chat[i].from}</strong> para <strong>${chat[i].to}</strong>: ${chat[i].text}</div>
-            </div>
-      `} else {
+            </div>`
+    } else{
       mensagem.innerHTML += `
               <div  class="notificationStatus data-identifier="message"">
                   <div class="time">(${chat[i].time})</div>
                   <div class="msgContent"><strong>${chat[i].from}</strong> ${chat[i].text}</div>
               </div>`
     }
-    if (chat[i].to == name) {
+    if (chat[i].type == "private_message" && (chat[i].to == name || chat[i].from == name)){
       mensagem.innerHTML += `  
             <div  class="notificationMsgReservada data-identifier="message"">
                 <div class="time">(${chat[i].time})</div>
@@ -109,6 +109,7 @@ function renderizarMensagem() {
   }
   scrollAutomatico();
 }
+
 
 function adicionarMensagem() {
 
