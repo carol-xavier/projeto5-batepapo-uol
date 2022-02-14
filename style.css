@@ -3,6 +3,53 @@ body {
     background-color: #E5E5E5;;
 }
 
+.tela-inicial {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: fixed;
+    z-index:3;
+}
+
+.tela-inicial img {
+    width: 130px;
+    height: 92px;
+    margin-top: 20%;
+}
+
+.tela-inicial input{
+    margin-top: 20%;
+    width: 261px;
+    height: 54px;
+    background-color: #FFFFFF;
+    border: 1px solid #D7D7D7;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-family: Roboto;
+    font-size: 18px;
+
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.tela-inicial button{
+    width: 109px;
+    height: 45px;
+    margin-top: 15px;
+
+    font-family: Roboto;
+    background-color: #E7E7E7;
+    border-radius: 9px;
+    color:#696969;
+    font-size: 18px;
+}
+
 header {
     width: 100%;
     height: 80px;
@@ -83,6 +130,10 @@ article {
     margin-top: 4px;
     margin-bottom: 4px;
     font-size: 14px;
+}
+
+article .messageBox{
+    overflow:auto;
 }
 
 article .notificationStatus {
